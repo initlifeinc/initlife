@@ -1,6 +1,7 @@
 # initlife 官网：部署说明
 
-> 状态：环境已只读核验，尚未安装软件、修改配置或发布站点。  
+> 状态：HTTP 部署完成，等待 DNS 生效后配置 HTTPS。
+>
 > 核验日期：2026-09-20
 
 ## 1. 已确认的部署目标
@@ -16,11 +17,14 @@
 
 ## 2. 当前服务器状态
 
-- SSH 连接正常，目标目录已经存在且当前为空。
-- 未发现正在运行的 Nginx、Caddy 或 Apache。
-- 服务器 80 端口当前由 `/root/workspace/app/SecretBankX/app.py` 的 Python 进程占用。
+- SSH 连接正常。
+- Nginx 1.24.0 已安装、启用并监听公网 80 端口。
+- 当前发布版本位于 `/root/workspace/initlife_website/releases/fcb6b6b`。
+- `/root/workspace/initlife_website/current` 使用相对符号链接指向当前版本。
+- `/var/www/initlife` 是网站根目录的只读 bind mount，供 Nginx 读取。
+- 原 SecretBankX Echo API 已调整为仅监听 `127.0.0.1:8080`，由 Nginx 默认虚拟主机代理。
 - `firewalld` 当前未启用；云安全组状态无法仅从服务器内部确认。
-- 未发现已安装的 Certbot。
+- 尚未安装证书工具或启用 443，等待真实 DNS 生效后处理。
 - 服务器网卡显示内网地址；公网地址和 DNS 生效结果以上线时的外部检查为准。
 
 ## 3. 部署设计约束
@@ -43,9 +47,23 @@
 └── shared/
 ```
 
-`current` 指向当前生效版本。新版本先完整上传至独立 release 目录，通过切换符号链接发布；回滚时切回上一个 release。
+`current` 使用相对链接指向当前生效版本。新版本先完整上传至独立 release 目录，通过切换符号链接发布；回滚时切回上一个 release。
 
-## 5. 凭证与敏感信息
+## 5. 当前服务拓扑
+
+```text
+公网 :80
+└── nginx.service
+    ├── Host: initlife.com / www.initlife.com
+    │   └── /var/www/initlife/current（只读静态文件）
+    └── 默认主机 / IP 访问
+        └── 127.0.0.1:8080
+            └── secretbankx-echo.service
+```
+
+没有新增 Node.js、Python 应用或数据库服务；官网本身只有静态文件。
+
+## 6. 凭证与敏感信息
 
 - 不在源码、构建产物、服务器网站目录或 Git 历史中保存密钥、Token、Cookie、私钥或用户数据。
 - SSH 私钥保留在本地安全位置，不复制进仓库。
@@ -53,13 +71,25 @@
 - 前端可读取的任何值都视为公开信息，不能通过构建时环境变量“隐藏”秘密。
 - 部署日志不得输出凭证或完整敏感配置。
 
-## 6. 正式部署前置条件
+## 7. DNS 与 HTTPS 待办
 
-1. 网站构建产物已经完成本地验证。
-2. 确认现有 SecretBankX Python 服务对应的域名、端口调整和保活方式。
-3. 安装并配置统一 Web 服务/反向代理。
-4. 阿里云安全组放行 80 和 443。
-5. 网站所有者完成 `initlife.com` DNS 解析。
-6. 外部 DNS 解析验证通过后申请 HTTPS 证书。
-7. 验证 HTTP 跳转、HTTPS、静态资源、404、缓存策略和现有服务均正常。
-8. 记录发布版本与回滚方法。
+1. 网站所有者将 `initlife.com` 指向服务器公网地址。
+2. 确认是否同时配置 `www.initlife.com`；若不使用，则从证书和 Nginx 配置中移除。
+3. 确认阿里云安全组放行 443。
+4. 外部 DNS 验证通过后申请 HTTPS 证书并配置自动续期。
+5. 将 HTTP 永久跳转到 HTTPS。
+6. 验证 HTTPS、静态资源、404、安全响应头和原有 API 均正常。
+
+## 8. 本次服务器修改范围
+
+- 安装软件包：`nginx`、`nginx-filesystem`、`alinux-logos-httpd`。
+- 新增：`/etc/nginx/conf.d/initlife.conf`。
+- 修改：`/etc/nginx/nginx.conf`；原文件备份为 `/etc/nginx/nginx.conf.before-initlife`。
+- 新增：`/etc/systemd/system/secretbankx-echo.service.d/proxy.conf`。
+- 备份：`/etc/systemd/system/secretbankx-echo.service.before-initlife`。
+- 新增：`/etc/systemd/system/var-www-initlife.mount`。
+- 新增并启用服务：`nginx.service`、`var-www-initlife.mount`。
+- 调整现有服务：`secretbankx-echo.service` 从 `0.0.0.0:80` 改为 `127.0.0.1:8080`，服务代码未修改。
+- 新增发布目录：`/root/workspace/initlife_website/releases/fcb6b6b`。
+- 新增当前版本链接：`/root/workspace/initlife_website/current -> releases/fcb6b6b`。
+- 新增只读挂载点：`/var/www/initlife`。

@@ -1,0 +1,12 @@
+[Unit]
+Description=Read-only bind mount for the initlife website
+After=local-fs.target
+
+[Mount]
+What=/root/workspace/initlife_website
+Where=/var/www/initlife
+Type=none
+Options=bind,ro
+
+[Install]
+WantedBy=multi-user.target
