@@ -19,7 +19,7 @@
 
 - SSH 连接正常。
 - Nginx 1.24.0 已安装、启用并监听公网 80 端口。
-- 当前发布版本位于 `/root/workspace/initlife_website/releases/fcb6b6b`。
+- 当前发布版本位于 `/root/workspace/initlife_website/releases/2309c7a`。
 - `/root/workspace/initlife_website/current` 使用相对符号链接指向当前版本。
 - `/var/www/initlife` 是网站根目录的只读 bind mount，供 Nginx 读取。
 - 原 SecretBankX Echo API 已调整为仅监听 `127.0.0.1:8080`，由 Nginx 默认虚拟主机代理。
@@ -90,6 +90,6 @@
 - 新增：`/etc/systemd/system/var-www-initlife.mount`。
 - 新增并启用服务：`nginx.service`、`var-www-initlife.mount`。
 - 调整现有服务：`secretbankx-echo.service` 从 `0.0.0.0:80` 改为 `127.0.0.1:8080`，服务代码未修改。
-- 新增发布目录：`/root/workspace/initlife_website/releases/fcb6b6b`。
-- 新增当前版本链接：`/root/workspace/initlife_website/current -> releases/fcb6b6b`。
+- 发布目录：`/root/workspace/initlife_website/releases/2309c7a`（当前），旧版本保留在 `releases/` 下用于回滚。
+- 当前版本链接：`/root/workspace/initlife_website/current -> releases/2309c7a`。
 - 新增只读挂载点：`/var/www/initlife`。
