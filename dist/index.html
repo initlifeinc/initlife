@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-title-zh="initlife — 为日常而做的好软件" data-title-en="initlife — Good software for everyday life">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
             <a href="#duhuixiu"><img src="assets/apps/duhuixiu.png" alt=""><span><strong>嘟惠修</strong><small>服务协作工具</small></span></a>
           </div>
         </details>
-        <a href="#studio">关于</a><a href="#blog">Blog <small class="soon">Soon</small></a><a class="nav-contact" href="mailto:initlifeltd@gmail.com">联系我们</a>
+        <a href="#studio" data-i18n="navAbout">关于</a><a href="blog.html">Blog</a><button class="language-toggle" type="button" data-lang-toggle aria-label="Switch language">EN</button><a class="nav-contact" href="mailto:initlifeltd@gmail.com" data-i18n="contact">联系我们</a>
       </nav>
     </div>
   </header>
@@ -35,20 +35,22 @@
     <section class="hero shell">
       <div class="hero-copy">
         <p class="eyebrow">Independent software studio</p>
-        <h1>让好软件，<br><span>自然融入生活。</span></h1>
-        <p class="hero-lede">我们打造简单、可靠且尊重隐私的 App。每一个产品，都从一个真实的问题开始。</p>
-        <div class="hero-actions"><a class="button button-dark" href="#products">探索产品</a><a class="button button-light" href="mailto:initlifeltd@gmail.com">联系我们</a></div>
+        <h1 data-i18n-html="heroTitle">让好软件，<br><span>自然融入生活。</span></h1>
+        <p class="hero-lede" data-i18n="heroLede">我们打造简单、可靠且尊重隐私的 App。每一个产品，都从一个真实的问题开始。</p>
+        <div class="hero-actions"><a class="button button-dark" href="#products" data-i18n="explore">探索产品</a><a class="button button-light" href="mailto:initlifeltd@gmail.com" data-i18n="contact">联系我们</a></div>
       </div>
-      <div class="app-constellation" aria-label="initlife 产品图标">
-        <div class="soft-orb orb-blue"></div><div class="soft-orb orb-orange"></div>
-        <a class="hero-app hero-app-main" href="#secretbankx"><img src="assets/apps/secretbankx.png" alt="SecretBankX"><span>SecretBankX</span></a>
-        <a class="hero-app hero-app-secret" href="#secretbank"><img src="assets/apps/secretbank.jpg" alt="SecretBank"><span>SecretBank</span></a>
-        <a class="hero-app hero-app-repair" href="#duhuixiu"><img src="assets/apps/duhuixiu.png" alt="嘟惠修"><span>嘟惠修</span></a>
+      <div class="product-carousel" data-carousel aria-label="产品轮播">
+        <div class="carousel-track">
+          <a class="carousel-slide is-active slide-x" href="#secretbankx" data-slide="0"><img src="assets/apps/secretbankx.png" alt="SecretBankX"><span><small>01 / 03</small><strong>SecretBankX</strong><em data-i18n="carouselX">重要资料，安心保存</em></span></a>
+          <a class="carousel-slide slide-secret" href="#secretbank" data-slide="1"><img src="assets/apps/secretbank.jpg" alt="SecretBank"><span><small>02 / 03</small><strong>SecretBank</strong><em data-i18n="carouselSecret">简单可靠的信息管理</em></span></a>
+          <a class="carousel-slide slide-repair" href="#duhuixiu" data-slide="2"><img src="assets/apps/duhuixiu.png" alt="嘟惠修"><span><small>03 / 03</small><strong>嘟惠修</strong><em data-i18n="carouselRepair">让服务协作更顺畅</em></span></a>
+        </div>
+        <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="上一个产品">←</button><div><button class="is-active" type="button" data-carousel-dot="0" aria-label="SecretBankX"></button><button type="button" data-carousel-dot="1" aria-label="SecretBank"></button><button type="button" data-carousel-dot="2" aria-label="嘟惠修"></button></div><button type="button" data-carousel-next aria-label="下一个产品">→</button></div>
       </div>
     </section>
 
     <section class="product-overview shell" id="products" aria-labelledby="products-title">
-      <div class="section-intro"><p class="eyebrow">Our apps</p><h2 id="products-title">为具体的问题，<br>做恰到好处的产品。</h2><p>三个不同的产品，共享同一种坚持：清晰的体验、可靠的功能和可以理解的数据边界。</p></div>
+      <div class="section-intro"><p class="eyebrow">Our apps</p><h2 id="products-title" data-zh-html="为具体的问题，<br>做恰到好处的产品。" data-en-html="Focused apps for<br>real problems.">为具体的问题，<br>做恰到好处的产品。</h2><p data-zh="三个不同的产品，共享同一种坚持：清晰的体验、可靠的功能和可以理解的数据边界。" data-en="Three different products, built on the same principles: clarity, dependability, and data boundaries you can understand.">三个不同的产品，共享同一种坚持：清晰的体验、可靠的功能和可以理解的数据边界。</p></div>
       <div class="app-rail">
         <a href="#secretbankx"><img src="assets/apps/secretbankx.png" alt=""><span><strong>SecretBankX</strong><small>重要资料管理</small></span><b>→</b></a>
         <a href="#secretbank"><img src="assets/apps/secretbank.jpg" alt=""><span><strong>SecretBank</strong><small>个人信息管理</small></span><b>→</b></a>
@@ -61,10 +63,10 @@
         <div class="feature-copy">
           <img class="feature-icon" src="assets/apps/secretbankx.png" alt="SecretBankX App 图标">
           <p class="eyebrow">SecretBankX</p>
-          <h2>重要资料，<br>安心放在手边。</h2>
-          <p>在 Apple 设备上保存密码与重要个人资料。本地优先、随时可用，需要时再选择加密同步。</p>
-          <ul><li>多个独立资料库</li><li>密码健康与安全中心</li><li>iPhone、iPad 与 Mac</li></ul>
-          <div class="feature-links"><a class="button button-white" href="https://secretbankx.initlife.com/">了解 SecretBankX</a><a class="plain-link" href="https://apps.apple.com/app/id6811630816">App Store ↗</a></div>
+          <h2 data-zh-html="重要资料，<br>安心放在手边。" data-en-html="Important information,<br>close and protected.">重要资料，<br>安心放在手边。</h2>
+          <p data-zh="在 Apple 设备上保存密码与重要个人资料。本地优先、随时可用，需要时再选择加密同步。" data-en="Keep passwords and important personal records across Apple devices. Local-first, available offline, with encrypted sync when you choose it.">在 Apple 设备上保存密码与重要个人资料。本地优先、随时可用，需要时再选择加密同步。</p>
+          <ul><li data-zh="多个独立资料库" data-en="Multiple independent vaults">多个独立资料库</li><li data-zh="密码健康与安全中心" data-en="Password health and security center">密码健康与安全中心</li><li>iPhone、iPad &amp; Mac</li></ul>
+          <div class="feature-links"><a class="button button-white" href="https://secretbankx.initlife.com/" data-i18n="learnX">了解 SecretBankX</a><a class="store-badge" href="https://apps.apple.com/app/id6811630816" aria-label="在 App Store 下载 SecretBankX"><img src="assets/badges/app-store.svg" alt="Download on the App Store"></a></div>
         </div>
         <div class="screen-stage" aria-label="SecretBankX 界面展示位">
           <div class="phone phone-left placeholder-screen"><span>App 界面展示位</span></div>
@@ -76,28 +78,28 @@
 
     <section class="secondary-products shell">
       <article class="secondary-card secret-card" id="secretbank">
-        <div class="card-copy"><img src="assets/apps/secretbank.jpg" alt="SecretBank App 图标"><p class="eyebrow">SecretBank</p><h2>简单可靠的个人信息管理。</h2><p>专注于最常用的功能，让重要信息随时可用，又不过度打扰。</p><a class="plain-link" href="https://apps.apple.com/cn/app/secret-bank-%E4%B8%93%E4%B8%9A%E7%9A%84%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E4%B8%93/id1031076692">前往 App Store ↗</a></div>
+        <div class="card-copy"><img src="assets/apps/secretbank.jpg" alt="SecretBank App 图标"><p class="eyebrow">SecretBank</p><h2 data-zh="简单可靠的个人信息管理。" data-en="Simple, dependable personal information management.">简单可靠的个人信息管理。</h2><p data-zh="专注于最常用的功能，让重要信息随时可用，又不过度打扰。" data-en="Focused on the essentials, so important information stays available without getting in your way.">专注于最常用的功能，让重要信息随时可用，又不过度打扰。</p><a class="store-badge" href="https://apps.apple.com/cn/app/secret-bank-%E4%B8%93%E4%B8%9A%E7%9A%84%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E4%B8%93/id1031076692" aria-label="在 App Store 下载 SecretBank"><img src="assets/badges/app-store.svg" alt="Download on the App Store"></a></div>
         <div class="card-art"><img src="assets/apps/secretbank.jpg" alt="" aria-hidden="true"></div>
       </article>
       <article class="secondary-card repair-card" id="duhuixiu">
-        <div class="card-copy"><img src="assets/apps/duhuixiu.png" alt="嘟惠修 App 图标"><p class="eyebrow">嘟惠修</p><h2>让服务与协作更顺畅。</h2><p>围绕真实工作场景设计，把复杂流程变成清楚、容易完成的任务。</p><a class="plain-link" href="mailto:initlifeltd@gmail.com?subject=嘟惠修%20支持">联系我们 →</a></div>
+        <div class="card-copy"><img src="assets/apps/duhuixiu.png" alt="嘟惠修 App 图标"><p class="eyebrow">嘟惠修</p><h2 data-zh="让服务与协作更顺畅。" data-en="Make service collaboration flow.">让服务与协作更顺畅。</h2><p data-zh="围绕真实工作场景设计，把复杂流程变成清楚、容易完成的任务。" data-en="Designed around real working situations, turning complex processes into clear, manageable tasks.">围绕真实工作场景设计，把复杂流程变成清楚、容易完成的任务。</p><a class="plain-link" href="mailto:initlifeltd@gmail.com?subject=嘟惠修%20支持" data-i18n="contact">联系我们 →</a></div>
         <div class="repair-preview"><div class="phone placeholder-screen warm"><span>App 界面展示位</span></div></div>
       </article>
     </section>
 
     <section class="numbers shell" aria-labelledby="numbers-title">
-      <div class="numbers-heading"><p class="eyebrow">Our footprint</p><h2 id="numbers-title">小团队，认真做好每一个产品。</h2></div>
+      <div class="numbers-heading"><p class="eyebrow">Our footprint</p><h2 id="numbers-title" data-zh="小团队，认真做好每一个产品。" data-en="A small team, serious about every product.">小团队，认真做好每一个产品。</h2></div>
       <div class="number-grid">
-        <div><strong>03</strong><span>款独立产品</span></div>
-        <div><strong>03</strong><span>类 Apple 设备</span></div>
-        <div><strong>01</strong><span>个专注的团队</span></div>
-        <div><strong>∞</strong><span>持续维护与打磨</span></div>
+        <div><strong>03</strong><span data-zh="款独立产品" data-en="independent products">款独立产品</span></div>
+        <div><strong>03</strong><span data-zh="类 Apple 设备" data-en="Apple device families">类 Apple 设备</span></div>
+        <div><strong>01</strong><span data-zh="个专注的团队" data-en="focused studio">个专注的团队</span></div>
+        <div><strong>∞</strong><span data-zh="持续维护与打磨" data-en="continuous care">持续维护与打磨</span></div>
       </div>
     </section>
 
     <section class="voices" aria-labelledby="voices-title">
       <div class="shell">
-        <div class="voices-heading"><div><p class="eyebrow">What people say</p><h2 id="voices-title">真正好用，来自每一次使用。</h2></div><p class="demo-note">内容示例 · 正式版替换为真实用户评价</p></div>
+        <div class="voices-heading"><div><p class="eyebrow">What people say</p><h2 id="voices-title" data-zh="真正好用，来自每一次使用。" data-en="Great software proves itself every day.">真正好用，来自每一次使用。</h2></div><p class="demo-note" data-zh="内容示例 · 正式版替换为真实用户评价" data-en="Sample copy · Replace with verified reviews before launch">内容示例 · 正式版替换为真实用户评价</p></div>
         <div class="quote-grid">
           <figure><blockquote>“信息层级很清楚，需要的内容总能很快找到，没有多余的打扰。”</blockquote><figcaption><span>示例评价 01</span><small>App Store 用户</small></figcaption></figure>
           <figure class="quote-featured"><blockquote>“换了新设备之后依然顺手。它不会试图改变我的习惯，只是安静地把事情做好。”</blockquote><figcaption><span>示例评价 02</span><small>长期用户</small></figcaption></figure>
@@ -109,18 +111,19 @@
     <section class="studio" id="studio">
       <div class="shell studio-layout">
         <p class="eyebrow">Made by initlife</p>
-        <h2>产品不需要喧闹，<br>但值得被认真对待。</h2>
-        <div class="studio-copy"><p>我们相信，真正好用的软件应该容易理解、长久可靠，并把选择权留给使用它的人。</p><div class="values"><span>实用先于热闹</span><span>隐私融入设计</span><span>为长期使用而做</span></div><a class="button button-dark" href="mailto:initlifeltd@gmail.com">联系我们</a></div>
+        <h2 data-zh-html="产品不需要喧闹，<br>但值得被认真对待。" data-en-html="Software can be quiet,<br>and still deeply considered.">产品不需要喧闹，<br>但值得被认真对待。</h2>
+        <div class="studio-copy"><p data-zh="我们相信，真正好用的软件应该容易理解、长久可靠，并把选择权留给使用它的人。" data-en="We believe useful software should be understandable, dependable over time, and leave important choices with the people using it.">我们相信，真正好用的软件应该容易理解、长久可靠，并把选择权留给使用它的人。</p><div class="values"><span data-zh="实用先于热闹" data-en="Useful before flashy">实用先于热闹</span><span data-zh="隐私融入设计" data-en="Privacy built into design">隐私融入设计</span><span data-zh="为长期使用而做" data-en="Made for the long term">为长期使用而做</span></div><a class="button button-dark" href="mailto:initlifeltd@gmail.com" data-i18n="contact">联系我们</a></div>
       </div>
     </section>
 
-    <section class="connect shell" id="blog">
-      <div class="connect-intro"><p class="eyebrow">Stay in the loop</p><h2>关注产品的下一步。</h2><p>了解新版本、设计思考和我们正在解决的问题。</p></div>
+    <section class="connect shell" id="socials">
+      <div class="connect-intro"><p class="eyebrow">Follow us on socials</p><h2 data-i18n="followTitle">与我们保持联系。</h2><p data-i18n="followCopy">了解产品更新、设计思考，也欢迎提出建议。</p></div>
       <div class="connect-grid">
-        <a class="connect-card" href="https://github.com/initlifeinc/initlife"><span class="connect-icon">GH</span><div><strong>GitHub</strong><small>查看项目与更新</small></div><b>↗</b></a>
-        <div class="connect-card muted-card"><span class="connect-icon">B</span><div><strong>Blog</strong><small>文章与开发手记 · 即将开放</small></div><b>→</b></div>
-        <a class="connect-card" href="mailto:initlifeltd@gmail.com"><span class="connect-icon">@</span><div><strong>联系我们</strong><small>建议、支持与合作</small></div><b>↗</b></a>
+        <a class="connect-card" href="https://github.com/initlifeinc/initlife"><span class="connect-icon">GH</span><div><strong>GitHub</strong><small data-i18n="githubCopy">查看项目与更新</small></div><b>↗</b></a>
+        <a class="connect-card" href="blog.html"><span class="connect-icon">B</span><div><strong>Blog</strong><small data-i18n="blogCopy">文章与开发手记</small></div><b>→</b></a>
+        <a class="connect-card" href="mailto:initlifeltd@gmail.com"><span class="connect-icon">@</span><div><strong data-i18n="contact">联系我们</strong><small data-i18n="contactCopy">建议、支持与合作</small></div><b>↗</b></a>
       </div>
+      <div class="social-row" aria-label="社交媒体预留入口"><span><b>f</b>Facebook<small>Reserved</small></span><span><b>𝕏</b>X<small>Reserved</small></span><span><b>微</b>微博<small>预留</small></span><span><b>◎</b>Instagram<small>Reserved</small></span></div>
     </section>
   </main>
 
@@ -128,7 +131,7 @@
     <div class="shell footer-main">
       <div class="footer-brand"><a class="brand" href="#main"><span class="brand-mark">i</span><span>initlife</span></a><h2>为日常而做的好软件。</h2><p>清晰、可靠，并尊重你的选择。</p></div>
       <div class="footer-column"><h3>产品</h3><a href="#secretbankx">SecretBankX</a><a href="#secretbank">SecretBank</a><a href="#duhuixiu">嘟惠修</a></div>
-      <div class="footer-column"><h3>initlife</h3><a href="#studio">关于我们</a><a href="#blog">Blog <small>Soon</small></a><a href="https://github.com/initlifeinc/initlife">GitHub ↗</a></div>
+      <div class="footer-column"><h3>initlife</h3><a href="#studio" data-i18n="navAbout">关于我们</a><a href="blog.html">Blog</a><a href="https://github.com/initlifeinc/initlife">GitHub ↗</a></div>
       <div class="footer-column"><h3>支持</h3><a href="mailto:initlifeltd@gmail.com">联系我们</a><a href="privacy.html">隐私说明</a><a href="terms.html">使用条款</a></div>
     </div>
     <div class="shell footer-bottom"><p>© <span data-year>2026</span> InitLife</p><p>Independent software studio</p><a href="#main">回到顶部 ↑</a></div>
