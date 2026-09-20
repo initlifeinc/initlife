@@ -8,8 +8,8 @@
   <meta name="theme-color" content="#f6f7fb">
   <link rel="canonical" href="https://initlife.com/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css?v=demo-1">
-  <script src="assets/site.js?v=demo-1" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=demo-2">
+  <script src="assets/site.js?v=demo-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -18,7 +18,15 @@
       <a class="brand" href="#main" aria-label="initlife 首页"><span class="brand-mark" aria-hidden="true">i</span><span>initlife</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button><span class="sr-only">打开导航</span><span></span><span></span></button>
       <nav id="site-nav" class="site-nav" aria-label="主导航" data-menu>
-        <a href="#products">产品</a><a href="#secretbankx">SecretBankX</a><a href="#studio">关于</a><a class="nav-contact" href="mailto:initlifeltd@gmail.com">联系我们</a>
+        <details class="product-menu">
+          <summary>产品 <span aria-hidden="true">⌄</span></summary>
+          <div class="product-popover">
+            <a href="#secretbankx"><img src="assets/apps/secretbankx.png" alt=""><span><strong>SecretBankX</strong><small>重要资料管理</small></span></a>
+            <a href="#secretbank"><img src="assets/apps/secretbank.jpg" alt=""><span><strong>SecretBank</strong><small>个人信息管理</small></span></a>
+            <a href="#duhuixiu"><img src="assets/apps/duhuixiu.png" alt=""><span><strong>嘟惠修</strong><small>服务协作工具</small></span></a>
+          </div>
+        </details>
+        <a href="#studio">关于</a><a href="#blog">Blog <small class="soon">Soon</small></a><a class="nav-contact" href="mailto:initlifeltd@gmail.com">联系我们</a>
       </nav>
     </div>
   </header>
@@ -77,6 +85,27 @@
       </article>
     </section>
 
+    <section class="numbers shell" aria-labelledby="numbers-title">
+      <div class="numbers-heading"><p class="eyebrow">Our footprint</p><h2 id="numbers-title">小团队，认真做好每一个产品。</h2></div>
+      <div class="number-grid">
+        <div><strong>03</strong><span>款独立产品</span></div>
+        <div><strong>03</strong><span>类 Apple 设备</span></div>
+        <div><strong>01</strong><span>个专注的团队</span></div>
+        <div><strong>∞</strong><span>持续维护与打磨</span></div>
+      </div>
+    </section>
+
+    <section class="voices" aria-labelledby="voices-title">
+      <div class="shell">
+        <div class="voices-heading"><div><p class="eyebrow">What people say</p><h2 id="voices-title">真正好用，来自每一次使用。</h2></div><p class="demo-note">内容示例 · 正式版替换为真实用户评价</p></div>
+        <div class="quote-grid">
+          <figure><blockquote>“信息层级很清楚，需要的内容总能很快找到，没有多余的打扰。”</blockquote><figcaption><span>示例评价 01</span><small>App Store 用户</small></figcaption></figure>
+          <figure class="quote-featured"><blockquote>“换了新设备之后依然顺手。它不会试图改变我的习惯，只是安静地把事情做好。”</blockquote><figcaption><span>示例评价 02</span><small>长期用户</small></figcaption></figure>
+          <figure><blockquote>“界面简单，但细节考虑得很周到。这是一款愿意长期放在手机里的工具。”</blockquote><figcaption><span>示例评价 03</span><small>独立软件用户</small></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
     <section class="studio" id="studio">
       <div class="shell studio-layout">
         <p class="eyebrow">Made by initlife</p>
@@ -84,8 +113,25 @@
         <div class="studio-copy"><p>我们相信，真正好用的软件应该容易理解、长久可靠，并把选择权留给使用它的人。</p><div class="values"><span>实用先于热闹</span><span>隐私融入设计</span><span>为长期使用而做</span></div><a class="button button-dark" href="mailto:initlifeltd@gmail.com">联系我们</a></div>
       </div>
     </section>
+
+    <section class="connect shell" id="blog">
+      <div class="connect-intro"><p class="eyebrow">Stay in the loop</p><h2>关注产品的下一步。</h2><p>了解新版本、设计思考和我们正在解决的问题。</p></div>
+      <div class="connect-grid">
+        <a class="connect-card" href="https://github.com/initlifeinc/initlife"><span class="connect-icon">GH</span><div><strong>GitHub</strong><small>查看项目与更新</small></div><b>↗</b></a>
+        <div class="connect-card muted-card"><span class="connect-icon">B</span><div><strong>Blog</strong><small>文章与开发手记 · 即将开放</small></div><b>→</b></div>
+        <a class="connect-card" href="mailto:initlifeltd@gmail.com"><span class="connect-icon">@</span><div><strong>联系我们</strong><small>建议、支持与合作</small></div><b>↗</b></a>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-layout"><a class="brand" href="#main"><span class="brand-mark">i</span><span>initlife</span></a><p>为日常而做的好软件。</p><nav aria-label="页脚导航"><a href="mailto:initlifeltd@gmail.com">支持</a><a href="privacy.html">隐私说明</a><a href="terms.html">使用条款</a></nav><p>© <span data-year>2026</span> InitLife</p></div></footer>
+  <footer class="site-footer">
+    <div class="shell footer-main">
+      <div class="footer-brand"><a class="brand" href="#main"><span class="brand-mark">i</span><span>initlife</span></a><h2>为日常而做的好软件。</h2><p>清晰、可靠，并尊重你的选择。</p></div>
+      <div class="footer-column"><h3>产品</h3><a href="#secretbankx">SecretBankX</a><a href="#secretbank">SecretBank</a><a href="#duhuixiu">嘟惠修</a></div>
+      <div class="footer-column"><h3>initlife</h3><a href="#studio">关于我们</a><a href="#blog">Blog <small>Soon</small></a><a href="https://github.com/initlifeinc/initlife">GitHub ↗</a></div>
+      <div class="footer-column"><h3>支持</h3><a href="mailto:initlifeltd@gmail.com">联系我们</a><a href="privacy.html">隐私说明</a><a href="terms.html">使用条款</a></div>
+    </div>
+    <div class="shell footer-bottom"><p>© <span data-year>2026</span> InitLife</p><p>Independent software studio</p><a href="#main">回到顶部 ↑</a></div>
+  </footer>
 </body>
 </html>
