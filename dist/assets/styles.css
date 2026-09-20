@@ -81,8 +81,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .product-topline { position: absolute; inset: 1.5rem 1.5rem auto; z-index: 2; display: flex; align-items: center; justify-content: space-between; color: var(--muted); }
 .product-index { font: 700 .75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .status-pill { padding: .4rem .7rem; border: 1px solid var(--line); border-radius: 999px; font-size: .72rem; }
-.product-symbol { align-self: center; display: grid; place-items: center; width: clamp(8rem, 21vw, 15rem); aspect-ratio: 1; margin: 3rem auto 1rem; border-radius: 2.7rem; font-family: Georgia, serif; font-size: clamp(4rem, 11vw, 8rem); line-height: 1; box-shadow: 0 1.5rem 5rem rgba(0,0,0,.25); transform: rotate(-4deg); }
-.symbol-x { background: linear-gradient(145deg, #52ddff, #3478ff); color: #04111f; }.symbol-s { background: linear-gradient(145deg, #b7f36b, #4fc999); color: #0a211a; }.symbol-d { background: linear-gradient(145deg, #bcaeff, #7068ef); color: #14102f; }
+.product-symbol { align-self: center; display: block; width: clamp(8rem, 21vw, 15rem); max-width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; margin: 3rem auto 1rem; border-radius: 22.5%; box-shadow: 0 1.5rem 5rem rgba(0,0,0,.28); transform: rotate(-3deg); }
 .product-card-featured .product-symbol { margin-bottom: 2rem; }
 .product-copy { position: relative; z-index: 2; max-width: 36rem; }
 .product-kicker { margin: 0 0 .45rem; color: var(--blue); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
@@ -92,6 +91,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .feature-list li { padding: .35rem .65rem; border-radius: .55rem; background: rgba(93,214,255,.08); color: #ccefff; font-size: .78rem; }
 .text-link { display: inline-block; margin-top: .6rem; color: var(--text); text-decoration-color: var(--blue); text-underline-offset: .35rem; font-weight: 750; }
 .text-link span { color: var(--blue); }
+.product-links { display: flex; flex-wrap: wrap; gap: .6rem 1.3rem; }
 
 .principles { border-block: 1px solid var(--line); background: var(--bg-soft); }
 .principles-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 9vw, 8rem); }
