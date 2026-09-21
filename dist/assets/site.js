@@ -36,7 +36,7 @@
       heroLede: '我们打造简单、可靠且尊重隐私的 App。每一个产品，都从一个真实的问题开始。',
       carouselX: '重要资料，安心保存', carouselSecret: '简单可靠的信息管理', carouselRepair: '让服务协作更顺畅',
       learnX: '了解 SecretBankX', followTitle: '与我们保持联系。', followCopy: '了解产品更新、设计思考，也欢迎提出建议。',
-      githubCopy: '查看项目与更新', blogCopy: '文章与开发手记', contactCopy: '建议、支持与合作',
+      blogCopy: '文章与开发手记', contactCopy: '建议、支持与合作',
       blogTitle: '关于产品、隐私，<br><span>以及长期主义。</span>',
       blogIntro: '记录产品背后的选择、开发过程中的思考，以及我们如何把复杂问题做得更简单。',
       productThinking: '产品思考', postTitle: '为什么 SecretBankX 坚持本地优先',
@@ -49,7 +49,7 @@
       heroLede: 'We make simple, dependable, privacy-minded apps. Every product begins with a real problem worth solving.',
       carouselX: 'Keep important information safe', carouselSecret: 'Simple, dependable information management', carouselRepair: 'Smoother service collaboration',
       learnX: 'Discover SecretBankX', followTitle: 'Stay connected.', followCopy: 'Follow product updates and design notes, or share an idea with us.',
-      githubCopy: 'Projects and updates', blogCopy: 'Stories and build notes', contactCopy: 'Ideas, support, and partnerships',
+      blogCopy: 'Stories and build notes', contactCopy: 'Ideas, support, and partnerships',
       blogTitle: 'On products, privacy,<br><span>and building for the long term.</span>',
       blogIntro: 'Notes on the choices behind our products, what we learn while building, and how we make complex things feel simple.',
       productThinking: 'Product thinking', postTitle: 'Why SecretBankX is local-first',
@@ -80,9 +80,8 @@
     document.querySelectorAll('[data-lang-content]').forEach((node) => {
       node.hidden = node.dataset.langContent !== lang;
     });
-    document.querySelectorAll('[data-lang-toggle]').forEach((button) => {
-      button.textContent = lang === 'zh' ? 'EN' : '中文';
-      button.setAttribute('aria-label', lang === 'zh' ? 'Switch to English' : '切换到中文');
+    document.querySelectorAll('[data-lang-select]').forEach((select) => {
+      select.value = lang;
     });
     try { localStorage.setItem('initlife-lang', lang); } catch (_) {}
   };
@@ -90,8 +89,8 @@
   let language = 'zh';
   try { language = localStorage.getItem('initlife-lang') || 'zh'; } catch (_) {}
   applyLanguage(language);
-  document.querySelectorAll('[data-lang-toggle]').forEach((button) => button.addEventListener('click', () => {
-    language = document.documentElement.lang.startsWith('zh') ? 'en' : 'zh';
+  document.querySelectorAll('[data-lang-select]').forEach((select) => select.addEventListener('change', (event) => {
+    language = event.target.value;
     applyLanguage(language);
   }));
 
