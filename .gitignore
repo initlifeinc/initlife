@@ -4,3 +4,4 @@
 .env
 .env.*
 !.env.example
+/archive/original-images-2026-09-21/
