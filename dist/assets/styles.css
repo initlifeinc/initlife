@@ -28,3 +28,5 @@
 .connect-grid{grid-template-columns:minmax(0,26rem)}
 @media(max-width:560px){.connect-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+.icp-footer{padding-block:0 1.5rem;text-align:center}.icp-footer a{color:#c5c9d0;text-decoration:none;font-size:.88rem}.icp-footer a:hover{text-decoration:underline;color:#fff}
