@@ -19,3 +19,5 @@ Linear 项目：[initlife 官网](https://linear.app/secretbankx/project/initlif
 ```bash
 python3 -m http.server 4173 --directory dist
 ```
+
+中文首页位于 `/`，英文首页位于 `/en/`。页头语言菜单会切换到对应地址，并保留“关于”或“记录”的锚点位置。
