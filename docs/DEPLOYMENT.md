@@ -7,6 +7,15 @@
 - 首次配置 GitHub Pages 域名后需等待证书签发，再开启强制 HTTPS。验证要求：权威 DNS 的 CNAME、GitHub Pages 构建、HTTPS 页面及静态资源、主站到产品站入口。
 - 本次不改动 Nginx 配置；旧 release 保留，可切换 `current` 回滚。GitHub Pages 可通过回退产品仓库提交回滚。
 
+## 本次上线验收：通过
+
+- 个人名片 release：`0af4131`，中英文 HTML 与 CSS/JS 均与本地发布源逐字节一致，Nginx 配置检查通过。
+- 产品仓库：`https://github.com/initlifeinc/app-website`，GitHub Pages 构建成功，域名 `app.initlife.com`，强制 HTTPS 已开启。父仓库 submodule 锁定 GitHub 域名设置产生的最终提交 `487328d`。
+- DNS：`app` 从旧 A 记录改为 `initlifeinc.github.io` 的 CNAME，TTL 600 秒；公共 DNS 与 GitHub DNS 检查均通过。主域名和 `secretbankx` 的解析未改动。
+- 两站 HTTPS 页面、全部引用静态资源、深层不存在路径的 404、备案链接均验证通过；产品站 HTTP 返回 301 至 HTTPS。
+- 原 `secretbankx.initlife.com` 的 Pages 绑定、构建和强制 HTTPS 仍正常。
+- 回滚主站可将 `current` 切回 `releases/a5343fe`。产品页面可回退子仓库提交；如需恢复迁移前的 `app` DNS，原记录为默认线路 A `47.99.134.247`、TTL 600 秒。
+
 以下为首次部署时的历史记录，当前状态以上述结构和实时查询为准。
 
 ---
