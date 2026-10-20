@@ -2,7 +2,7 @@
 
 - 个人站：`initlife.com`，`main` 分支 `dist/`，阿里云 Nginx 静态托管，原子发布目录 `/root/workspace/initlife_website/releases/<short-sha>`，切换 `current`。
 - 产品站：`app.initlife.com`，独立仓库 `initlifeinc/app-website` 的 `main` 根目录，经 GitHub Pages 发布；DNS `app` CNAME 指向 `initlifeinc.github.io`。CNAME 指向账号域名，不包含仓库路径。
-- 主仓库通过 `app-website/` submodule 锁定产品站提交；更新子仓库后须显式提交父仓库指针。
+- 主仓库通过 `app-website/` 和 `secretbankx-website/` 两个 submodule 分别锁定产品集合站与 SecretBankX 官网提交；更新子仓库后须显式提交父仓库指针。SecretBankX 官网继续由独立仓库 `initlifeinc/secretbankx-website` 的 `main` 根目录发布到 `secretbankx.initlife.com`。
 - 产品站从 `app_webpage` 的 `dist/` 导出，源提交 `64af5cda08da77c666de44987f3265ae3c02911f`，保留该目录的提交历史；原分支不删除。
 - 首次配置 GitHub Pages 域名后需等待证书签发，再开启强制 HTTPS。验证要求：权威 DNS 的 CNAME、GitHub Pages 构建、HTTPS 页面及静态资源、主站到产品站入口。
 - 本次不改动 Nginx 配置；旧 release 保留，可切换 `current` 回滚。GitHub Pages 可通过回退产品仓库提交回滚。

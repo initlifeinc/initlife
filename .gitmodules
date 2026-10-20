@@ -1,3 +1,7 @@
 [submodule "app-website"]
 	path = app-website
 	url = git@github.com:initlifeinc/app-website.git
+[submodule "secretbankx-website"]
+	path = secretbankx-website
+	url = git@github.com:initlifeinc/secretbankx-website.git
+	branch = main
