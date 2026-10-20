@@ -47,13 +47,13 @@
 
 | 项目 | 当前状态 | 现有参考 |
 | --- | --- | --- |
-| 一句话定位 | 有初稿，需确认 | Apple 设备上的本地优先密码与重要资料管理工具 |
-| 核心能力 | 有初稿，需代码/产品核验 | 本地加密资料库、多 Vault、离线使用、可选 iCloud 同步、生物识别、AutoFill |
+| 一句话定位 | 已同步产品官网（2026-10-21） | 重要资料，随时在手；本地加密、由用户掌控的资料库 |
+| 核心能力 | 已同步产品官网（2026-10-21） | 密码、TOTP、证件与加密附件；自选 iCloud、文件夹或 HTTPS WebDAV 同步；基础导入、导出、完整备份与恢复免费。iPhone / iPad AutoFill 取决于系统设置及目标支持 |
 | 支持平台 | 已知：iPhone、iPad、Mac | 现有文案为 iOS/iPadOS 16+、macOS 13+，需确认 |
 | App Store 链接 | 已有 | `https://apps.apple.com/app/id6811630816` |
 | GitHub 链接 | 已有，需确认公开目标 | `https://github.com/initlife/secretbankx` |
 | 联系邮箱 | 已有 | `initlifeltd@gmail.com` |
-| 应用图标与截图 | 待提供 | 现有页面仅使用 emoji 占位 |
+| 应用图标与截图 | 已同步产品官网（2026-10-21） | 真实原生 Mac 和 iPhone 模拟器截图，均使用演示数据；来源见下方 |
 | 隐私政策 | 有中英文版本，需法律与事实复核 | 现有源码更新时间标注为 2026-08-31 |
 | 服务条款 | 有中英文版本，需法律复核 | 现有静态页可作为迁移底稿 |
 | 安全表述 | 高风险核验项 | SQLCipher、AES-256、PBKDF2 参数、主密码、同步边界等必须与当前实现一致 |
@@ -79,3 +79,11 @@
 - 中文与英文内容应表达同一事实，不以机器直译直接上线。
 - 法律文本发布前需由实际责任人确认；网站实现只负责准确呈现，不代替法律审查。
 - 仓库与发布站点均为公开环境，内容文件、构建产物、提交历史和前端代码中均不得包含敏感信息。
+
+## 7. 2026-10-21 内容与截图同步来源
+
+- InitLife 线上页脚：`https://initlife.com/`，现场读取 HTML 确认 ICP 为 `浙ICP备14001301号-2`、公安备案为 `浙公网安备33011002020822号`；当前分支六个页面均使用同样的官方链接。
+- SecretBankX 文案来源：相邻仓库 `secretbankx-website`，提交 `7ccb540` 的 `index.html`、`en/index.html`。首页与中英文 Blog 同步了本地存储、同步渠道、服务边界和独立备份说明；未新增价格或系统最低版本承诺。
+- 截图来源：该仓库的 `evidence/native-assets.json`、`assets/app-mac-apple-light.webp` 和 `assets/app-iphone-home-light.webp`。2026-10-21 的原生 macOS App 与 iPhone 模拟器捕获，六条合成演示账号，密码遮蔽，无生产数据。
+- 发布衍生图：`dist/assets/screens/secretbankx-mac.jpg`（1440 × 984）、`secretbankx-iphone.jpg`（640 × 1391），JPEG 质量 90，仅缩放与编码。原生界面未重绘；窗口及设备展示使用 CSS 排版。App 图标取自同源 `assets/app-icon.png`，保持 256 × 256，更新到现有 JPEG 路径。
+- 移除了三张不再引用的旧 iPhone 截图；原始大图不复制进 `dist/`。
