@@ -1,0 +1,3 @@
+[submodule "app-website"]
+	path = app-website
+	url = git@github.com:initlifeinc/app-website.git
