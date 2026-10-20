@@ -1,6 +1,6 @@
 (() => {
   const sharedHeader = document.querySelector('[data-site-header]');
-  if (sharedHeader) sharedHeader.innerHTML = `<div class="shell nav-wrap"><a class="brand" href="index.html" aria-label="initlife 首页"><span class="brand-mark" aria-hidden="true">i</span><span>initlife</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button><span class="sr-only">打开导航</span><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="主导航" data-menu><details class="product-menu"><summary><span data-i18n="navProducts">产品</span><span class="product-arrow" aria-hidden="true"></span></summary><div class="product-popover"><a href="index.html#secretbankx"><img src="assets/apps/secretbankx.jpg?v=20261021" alt=""><span><strong>SecretBankX</strong><small>重要资料管理</small></span></a><a href="index.html#secretbank"><img src="assets/apps/secretbank.jpg" alt=""><span><strong>SecretBank</strong><small>个人信息管理</small></span></a><a href="index.html#duhuixiu"><img src="assets/apps/duhuixiu.jpg" alt=""><span><strong>嘟惠修</strong><small>打印机与电脑维修服务</small></span></a></div></details><a href="index.html#studio" data-i18n="navAbout">关于</a><a href="blog.html">Blog</a><label class="language-select"><span class="sr-only">选择语言</span><select data-lang-select aria-label="选择语言"><option value="zh">简体中文</option><option value="en">English</option></select></label><a class="nav-contact" href="mailto:initlifeltd@gmail.com" data-i18n="contact">与我们保持联系</a></nav></div>`;
+  if (sharedHeader) sharedHeader.innerHTML = `<div class="shell nav-wrap"><a class="brand" href="index.html" aria-label="initlife 首页"><span class="brand-mark" aria-hidden="true">i</span><span>initlife</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button><span class="sr-only">打开导航</span><span></span><span></span></button><nav id="site-nav" class="site-nav" aria-label="主导航" data-menu><details class="product-menu"><summary><span data-i18n="navProducts">产品</span><span class="product-arrow" aria-hidden="true"></span></summary><div class="product-popover"><a href="index.html#secretbankx"><img src="assets/apps/secretbankx.jpg?v=20261021" alt=""><span><strong>SecretBankX</strong><small>重要资料管理</small></span></a><a href="index.html#secretbank"><img src="assets/apps/secretbank.jpg" alt=""><span><strong>SecretBank</strong><small>个人信息管理</small></span></a><a href="index.html#duhuixiu"><img src="assets/apps/duhuixiu.jpg" alt=""><span><strong>嘟惠修</strong><small>打印机与电脑维修服务</small></span></a></div></details><a href="index.html#studio" data-i18n="navAbout">关于</a><a href="blog.html">Blog</a><label class="language-select"><span class="sr-only">选择语言</span><select data-lang-select aria-label="选择语言"><option value="zh">简体中文</option><option value="en">English</option></select></label><a class="nav-contact" href="mailto:initlifeltd@gmail.com" data-i18n="contact">给我留言</a></nav></div>`;
   const header = document.querySelector('[data-header]');
   const menuButton = document.querySelector('[data-menu-button]');
   const menu = document.querySelector('[data-menu]');
@@ -33,11 +33,11 @@
 
   const translations = {
     zh: {
-      navProducts: '产品', navAbout: '关于', contact: '与我们保持联系', explore: '探索产品',
+      navProducts: '产品', navAbout: '关于', contact: '给我留言', explore: '探索产品',
       heroTitle: '让好软件，<br><span>自然融入生活。</span>',
       heroLede: '我们打造简单、可靠且尊重隐私的 App。每一个产品，都从一个真实的问题开始。',
       carouselX: '重要资料，随时在手', carouselSecret: '简单可靠的信息管理', carouselRepair: '打印机与电脑维修服务',
-      learnX: '了解 SecretBankX', followTitle: '与我们保持联系。', followCopy: '了解产品更新、设计思考，也欢迎提出建议。',
+      learnX: '了解 SecretBankX', followTitle: '给我留言。', followCopy: '了解产品更新、设计思考，也欢迎提出建议。',
       blogCopy: '文章与开发手记',
       blogTitle: '关于产品、隐私，<br><span>以及长期主义。</span>',
       blogIntro: '记录产品背后的选择、开发过程中的思考，以及我们如何把复杂问题做得更简单。',
@@ -46,11 +46,11 @@
       readArticle: '阅读全文 →', updatesLabel: '持续记录', updatesStatus: '产品随时在变', nextPost: '更多产品笔记，会跟着真实进展慢慢写下。', nextPostCopy: '这里用于沉淀已经发生的产品选择、设计取舍与开发经验，而不是预告尚未确认的功能。', backHome: '返回首页 →'
     },
     en: {
-      navProducts: 'Products', navAbout: 'About', contact: 'Stay connected', explore: 'Explore our apps',
+      navProducts: 'Products', navAbout: 'About', contact: 'Leave me a message', explore: 'Explore our apps',
       heroTitle: 'Good software,<br><span>made for everyday life.</span>',
       heroLede: 'We make simple, dependable, privacy-minded apps. Every product begins with a real problem worth solving.',
       carouselX: 'Important information, always at hand', carouselSecret: 'Simple, dependable information management', carouselRepair: 'Printer and computer repair services',
-      learnX: 'Discover SecretBankX', followTitle: 'Stay connected.', followCopy: 'Follow product updates and design notes, or share an idea with us.',
+      learnX: 'Discover SecretBankX', followTitle: 'Leave me a message.', followCopy: 'Follow product updates and design notes, or share an idea with me.',
       blogCopy: 'Stories and build notes',
       blogTitle: 'On products, privacy,<br><span>and building for the long term.</span>',
       blogIntro: 'Notes on the choices behind our products, what we learn while building, and how we make complex things feel simple.',
